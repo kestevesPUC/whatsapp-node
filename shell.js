@@ -15,7 +15,7 @@ client.on('qr', qr => {
 client.on('ready', () => {
     console.log('🤖 Bot conectado!');
 });
-
+ 
 client.on('message', msg => {
     if (msg.body === '!ping') {
         msg.reply('pong 🏓');
@@ -25,9 +25,7 @@ client.on('message', msg => {
 client.initialize();
 
 
-// --------------------
-// EXPRESS (API)
-// --------------------
+
 const express = require('express');
 const app = express();
 app.use(express.json());
