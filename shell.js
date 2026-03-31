@@ -15,7 +15,7 @@ client.on('qr', qr => {
 client.on('ready', () => {
     console.log('🤖 Bot conectado!');
 });
- 
+
 client.on('message', msg => {
     if (msg.body === '!ping') {
         msg.reply('pong 🏓');
@@ -25,7 +25,9 @@ client.on('message', msg => {
 client.initialize();
 
 
-
+// --------------------
+// EXPRESS (API)
+// --------------------
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -60,9 +62,6 @@ app.post('/send', async (req, res) => {
 
 
 // ROTA POST PARA ENVIAR MENSAGEM
-app.post('/logout', async () => {
+app.post('/logout', async (req, res) => {
     client.logout();
 });
-
-// Inicia o servidor
-app.listen(3000, () => console.log("API rodando na porta 3000"));
